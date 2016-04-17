@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Projects Manager
+    link(rel="stylesheet" href="css/reset.css")
+    link(rel="stylesheet" href="css/style.css")
+    script(src="js/app.js")
+  body
+    header.header
+      .container
+        .logo Projects Manager
+        .languages
+          a(href="#").header_button.languages- Рус
+          a(href="#").header_button.languages-selected Eng
+        .sign_buttons
+          a(href="#").header_button.sign_button.sign_button-sighin Sign in
+          a(href="#").header_button.sign_button.sign_button-sighup Sign up
+    main.main
+    footer.footer
+    .overlay
+      form.sign_form
+        label Enter name:
+          input.sign_form_input(type="text")
+        label Enter password:
+          input.sign_form_input(type="password")
+        input.sign_form_input.sign_form_input-submit(type="submit" value="Sign in")
