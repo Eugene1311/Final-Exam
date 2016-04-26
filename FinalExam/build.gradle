@@ -1,0 +1,23 @@
+group 'FinalExam'
+version 'FinalExam-1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:+'
+    compile 'javax:javaee-api:+'
+    compile 'org.slf4j:slf4j-api:+'
+    compile 'mysql:mysql-connector-java:+'
+    compile 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:+'
+    compile 'org.glassfish.web:javax.servlet.jsp.jstl:+'
+    providedCompile 'org.apache.tomcat:tomcat-api:+'
+    providedCompile 'org.apache.tomcat:tomcat-jsp-api:+'
+}

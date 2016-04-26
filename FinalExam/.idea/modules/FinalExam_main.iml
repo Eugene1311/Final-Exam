@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="FinalExam:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="FinalExam" external.system.module.type="sourceSet" external.system.module.version="FinalExam-1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/../../src/main/conf/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/../../src/main/conf" relative="/WEB-INF" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web Gradle : FinalExam-FinalExam-1.0-SNAPSHOT.war">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/../../src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/../../src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../../build/classes/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Gradle: javax:javaee-api:7.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.21" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: mysql:mysql-connector-java:6.0.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.glassfish.web:javax.servlet.jsp.jstl:1.2.4" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-api:9.0.0.M4" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-jsp-api:9.0.0.M4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.sun.mail:javax.mail:1.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.servlet.jsp.jstl:jstl-api:1.2" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-servlet-api:9.0.0.M4" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-el-api:9.0.0.M4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.servlet.jsp:jsp-api:2.1" level="project" />
+  </component>
+</module>

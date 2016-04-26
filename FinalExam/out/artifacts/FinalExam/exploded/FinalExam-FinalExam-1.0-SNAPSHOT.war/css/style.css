@@ -1,0 +1,101 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: Arial;
+    height: 100%;
+}
+.header {
+    height: 70px;
+    width: 100%;
+    background-image: linear-gradient(#669F64, #37A237);
+    color: #fff;
+}
+.container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+.logo {
+    font-size: 2em;
+    width: 40%;
+    padding-top: 20px;
+}
+.logo_link {
+    color: #fff;
+    text-decoration: none;
+}
+.sign_buttons {
+    float: right;
+    margin-top: -22px;
+    clear: right;
+}
+.header_button {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.languages {
+    float: right;
+    margin-right: 200px;
+    margin-top: -22px;
+}
+.languages-selected {
+    text-decoration: underline;
+}
+.sign_button {
+    border-radius: 5px;
+    padding: 5px;
+}
+.sign_button-sighin {
+    background: #333;
+    border: 1px solid #333;
+}
+.sign_button-sighup {
+    background: #fff;
+    color: #000;
+}
+.main {
+    height: calc(100% - 140px);
+}
+.footer {
+    height: 70px;
+    width: 100%;
+    background: #333;
+}
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.05);
+    display: none;
+}
+.sign_form {
+    margin: 120px auto;
+    max-width: 400px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px #ccc;
+    background: #fff;
+}
+.sign_form_input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 15px 0;
+    font-size: 1.2em;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.sign_form_input-submit {
+    width: 40%;
+    margin: 0 auto 5px;
+    display: block;
+    background: #50A14F;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 0;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://tomcat.apache.org/xml"
+        xmlns:jaspic="http://tomcat.apache.org/xml"
+        elementFormDefault="qualified"
+        version="1.0">
+  <element name="jaspic-providers">
+    <complexType>
+      <sequence>
+        <element name="provider" minOccurs="0" maxOccurs="unbounded">
+          <complexType>
+            <sequence>
+              <element name="property" minOccurs="0" maxOccurs="unbounded">
+                <complexType>
+                  <attribute name="name" use="required" type="jaspic:propertyName"/>
+                  <attribute name="value" use="required" type="string"/>
+                </complexType>
+              </element>
+            </sequence>
+            <attribute name="className" use="required" type="string"/>
+            <attribute name="layer" use="required" type="string"/>
+            <attribute name="appContext" use="required" type="string"/>
+            <attribute name="description" type="string"/>
+          </complexType>
+        </element>
+      </sequence>
+      <attribute name="version" type="string"/>
+    </complexType>
+  </element>
+  <simpleType name="propertyName">
+    <restriction base="string">
+      <minLength value="1"/>
+    </restriction>
+  </simpleType>
+</schema>
