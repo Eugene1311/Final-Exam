@@ -17,36 +17,29 @@ import java.util.ResourceBundle;
 public class TestJsonServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json; charset=utf-8");
         PrintWriter out = response.getWriter();
-        if(Objects.equals(request.getParameter("language"), "english")) {
-            Locale locale = Locale.ENGLISH;
-            ResourceBundle myResources = ResourceBundle.getBundle("locale",
-                    locale);
-
-            String title = myResources.getString("local.title");
-            String signInButton = myResources.getString("local.signInButton");
-            String signUpButton = myResources.getString("local.signUpButton");
-
-//            JsonGeneratorFactory factory = Json.createGeneratorFactory(null);
-//            JsonGenerator gen = factory.createGenerator(System.out);
-//            gen.writeStartObject()
-//                    .write("title", title)
-//                    .write("signInButton", signInButton)
-//                    .write("signUpButton", signUpButton)
-//                .writeEnd();
-//            out.println(gen);
-//            out.println("signInButton :" + signInButton);
-//            out.println("signUpButton :" + signUpButton);
-
-            JsonObject data = Json.createObjectBuilder()
-                    .add("title", title)
-                    .add("signInButton", signInButton)
-                    .add("signUpButton", signUpButton)
-                    .build();
-
-            Json.createWriter(out).writeObject(data);
+        ResourceBundle myResources = null;
+        
+        if(Objects.equals(request.getParameter("language"), "en")) {
+            myResources = ResourceBundle.getBundle("locale",
+                    new Locale("en"));
+        } else if(Objects.equals(request.getParameter("language"), "ru")) {
+            myResources = ResourceBundle.getBundle("locale",
+                    new Locale("ru"));
         }
 
-//        out.println(request.getParameter("language"));
+        String title = myResources.getString("local.title");
+        String signInButton = myResources.getString("local.signInButton");
+        String signUpButton = myResources.getString("local.signUpButton");
+
+        JsonObject data = Json.createObjectBuilder()
+                .add("title", title)
+                .add("signInButton", signInButton)
+                .add("signUpButton", signUpButton)
+                .build();
+
+        Json.createWriter(out).writeObject(data);
     }
 }

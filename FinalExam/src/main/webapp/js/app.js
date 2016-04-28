@@ -21,9 +21,9 @@ function init() {
         var language;
         
         if(e.target === engButton) {
-            language = 'english';
+            language = 'en';
         } else {
-            language = 'russian';
+            language = 'ru';
         }
 
         var xhr = new XMLHttpRequest();
@@ -36,7 +36,7 @@ function init() {
                 console.log(xhr);
             }
 
-            console.log( xhr.responseText );
+            console.log(JSON.parse(xhr.responseText));
             Array.prototype.forEach.call(languagesEl.querySelectorAll('.header_button'), function(item) {
                 item.classList.remove('languages-selected');
             });
