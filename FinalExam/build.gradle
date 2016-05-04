@@ -17,8 +17,6 @@ dependencies {
     compile 'org.slf4j:slf4j-api:+'
     compile 'mysql:mysql-connector-java:+'
     compile 'org.glassfish:javax.json:1.0.4'
-    compile 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:+'
-    compile 'org.glassfish.web:javax.servlet.jsp.jstl:+'
-    providedCompile 'org.apache.tomcat:tomcat-api:+'
-    providedCompile 'org.apache.tomcat:tomcat-jsp-api:+'
+    compile 'org.webjars:webpack:1.5.3'
+    compile 'org.apache.tomcat:tomcat-catalina:+'
 }

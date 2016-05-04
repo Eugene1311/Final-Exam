@@ -7,7 +7,7 @@
     <title>Projects Manager</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
   <header class="header">
