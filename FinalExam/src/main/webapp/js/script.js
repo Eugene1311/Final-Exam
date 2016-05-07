@@ -27,7 +27,7 @@ function init() {
         }
 
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/test-json?language=' + language, true);
+        xhr.open('GET', '/localize?language=' + language, true);
         xhr.send();
         xhr.onreadystatechange = function() {
             if (this.readyState != 4) return;
