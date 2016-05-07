@@ -108,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LocalizationServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
-              <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+              <caret line="39" column="73" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -1527,7 +1527,7 @@
       <workItem from="1462531740639" duration="1095000" />
       <workItem from="1462553392884" duration="3198000" />
       <workItem from="1462563816735" duration="4169000" />
-      <workItem from="1462577453215" duration="7631000" />
+      <workItem from="1462577453215" duration="7783000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <created>1461664450610</created>
@@ -1564,7 +1564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1462352587045</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="wip">
+      <created>1462585456487</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1462585456487</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1600,7 +1607,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187798000" />
+    <option name="totallyTimeSpent" value="187950000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -2093,7 +2100,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LocalizationServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+          <caret line="39" column="73" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
           <folding />
         </state>
       </provider>

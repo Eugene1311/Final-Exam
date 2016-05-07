@@ -38,7 +38,6 @@ public class LocalizationServlet extends HttpServlet {
     }
 
     private void buildJson(ResourceBundle myResources, PrintWriter out) {
-        //TODO переделать в цикл
         Set<String> keys = myResources.keySet();
         JsonObjectBuilder object = Json.createObjectBuilder();
 
@@ -47,31 +46,5 @@ public class LocalizationServlet extends HttpServlet {
 
         JsonObject data = object.build();
         Json.createWriter(out).writeObject(data);
-
-//        String title = myResources.getString("local.title");
-//        String signInButton = myResources.getString("local.signInButton");
-//        String signUpButton = myResources.getString("local.signUpButton");
-//        String firstNameLabel = myResources.getString("local.firstNameLabel");
-//        String lastNameLabel = myResources.getString("local.lastNameLabel");
-//        String passwordLabel = myResources.getString("local.passwordLabel");
-//        String roleLabel = myResources.getString("local.roleLabel");
-//        String developerRole = myResources.getString("local.developerRole");
-//        String managerRole = myResources.getString("local.managerRole");
-//        String customerRole = myResources.getString("local.customerRole");
-//
-//        JsonObject data = Json.createObjectBuilder()
-//                .add("title", title)
-//                .add("signInButton", signInButton)
-//                .add("signUpButton", signUpButton)
-//                .add("firstNameLabel", firstNameLabel)
-//                .add("lastNameLabel", lastNameLabel)
-//                .add("passwordLabel", passwordLabel)
-//                .add("roleLabel", roleLabel)
-//                .add("developerRole", developerRole)
-//                .add("managerRole", managerRole)
-//                .add("customerRole", customerRole)
-//                .build();
-//
-//        Json.createWriter(out).writeObject(data);
     }
 }
