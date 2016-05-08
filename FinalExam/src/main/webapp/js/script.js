@@ -2,7 +2,8 @@ function init() {
     var overlayEl = document.querySelector('.overlay'),
         signInButton = document.querySelector('.sign_button-sighin'),
         languagesEl = document.querySelector('.languages'),
-        engButton = document.getElementById('engButton');
+        engButton = document.getElementById('engButton'),
+        signUpButton = document.querySelector('.sign_button-sighup');
 
     signInButton.onclick = function(e) {
         e.preventDefault();
@@ -43,5 +44,28 @@ function init() {
             e.target.classList.add('languages-selected');
         };
     };
+
+    signUpButton.onclick = function(e) {
+        e.preventDefault();
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/login', true);
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr.send(
+            JSON.stringify({
+                test: "test"
+            })
+        );
+        xhr.onreadystatechange = function() {
+            if (this.readyState != 4) return;
+
+            if (xhr.status !== 200) {
+                console.log(xhr);
+                return;
+            }
+
+            console.log(JSON.parse(xhr.responseText));
+        };
+    }
 }
 window.addEventListener('DOMContentLoaded', init);
