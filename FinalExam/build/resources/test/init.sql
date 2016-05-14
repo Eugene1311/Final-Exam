@@ -12,4 +12,5 @@ CREATE TABLE IF NOT EXISTS users (
   FOREIGN KEY (role_id) REFERENCES roles(id)
 );
 
-INSERT INTO roles (role) VALUES ('manger'), ('customer');
+# INSERT INTO roles (role) VALUE ('developer');
+# INSERT INTO roles (role) VALUES ('manger'), ('customer');

@@ -8,6 +8,7 @@
           <element id="module-output" name="Final-Exam" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="Final-Exam/web/Web2" />
     </root>
   </artifact>
 </component>

@@ -1,6 +1,6 @@
 package servlets;
 
-import org.apache.log4j.Logger;
+import lombok.extern.log4j.Log4j;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -15,20 +15,18 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 @WebServlet("/login")
+@Log4j
 public class LoginServlet extends HttpServlet {
-    private static final Logger log = Logger.getRootLogger();
-//            Logger.getLogger(LoginServlet.class);
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logging();
+//        logging();
 
         JsonReader jsonReader = Json.createReader(req.getReader());
         JsonObject json = jsonReader.readObject();
         for (Map.Entry entry: json.entrySet()) {
-            System.out.println(entry.getKey() + " : " + entry.getValue());
+            log.info(entry.getKey() + " : " + entry.getValue());
         }
-//        System.out.println(json.getString("test"));
 
         resp.setContentType("application/json; charset=utf-8");
         PrintWriter out = resp.getWriter();
@@ -38,9 +36,9 @@ public class LoginServlet extends HttpServlet {
         Json.createWriter(out).writeObject(data);
     }
 
-    private void logging() throws IOException {
-//        String prefix =  getServletContext().getRealPath("/");
-//        System.out.println("prefix: " + prefix);
-        log.info("test from LoginServlet");
-    }
+//    private void logging() throws IOException {
+////        String prefix =  getServletContext().getRealPath("/");
+////        System.out.println("prefix: " + prefix);
+//        log.info("test from LoginServlet");
+//    }
 }

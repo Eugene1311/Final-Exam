@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import javax.annotation.Resource;
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,13 +10,12 @@ import java.sql.*;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-/**
- * Created by Евгений on 06.05.2016.
- */
 public class TestDB {
     private String url = "jdbc:mysql://localhost:3306/projects_manager?" +
             "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&" +
             "useSSL=true&user=root&password=root";
+    @Resource(name="jdbc/ProdDB")
+    private static DataSource ds;
 
     @Test
     public void testDriver() throws SQLException {
@@ -39,5 +40,20 @@ public class TestDB {
             Arrays.stream(sqls).forEach((ExceptionalConsumer<String, ?>) statement::addBatch);
             statement.executeBatch();
         }
+    }
+
+    @Test
+    public void testDataSource () {
+        System.out.println(ds);
+//        try(Connection connection = ds.getConnection();
+//            Statement statement = connection.createStatement();
+//            ResultSet rs = statement.executeQuery("select now()")) {
+//            System.out.println(connection.getClass().getCanonicalName());
+//            while(rs.next()) {
+//                System.out.println(rs.getString(1));
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 }

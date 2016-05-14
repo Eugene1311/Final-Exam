@@ -9,18 +9,54 @@
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
       <schema id="1" name="projects_manager"/>
       <table id="2" parent="1" name="roles"/>
-      <column id="3" parent="2" name="id">
+      <table id="3" parent="1" name="users"/>
+      <column id="4" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="4" parent="2" name="role">
+      <column id="5" parent="2" name="role">
+        <mandatory>1</mandatory>
         <data-type>varchar(15)</data-type>
       </column>
-      <key id="5" parent="2" name="PRIMARY">
+      <key id="6" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
+      <column id="7" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="8" parent="3" name="first_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="9" parent="3" name="last_name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="10" parent="3" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="11" parent="3" name="role_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="12" parent="3" name="role_id">
+        <columns>role_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="13" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="14" parent="3" name="users_ibfk_1">
+        <columns>role_id</columns>
+        <ref-key>~.roles.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
     </database-model>
   </data-source>
 </component>

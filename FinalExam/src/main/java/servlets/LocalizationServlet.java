@@ -1,8 +1,9 @@
 package servlets;
 
+import functions.JsonHelper;
+
 import javax.json.Json;
 import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -14,7 +15,6 @@ import java.io.PrintWriter;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 @WebServlet("/localize")
 public class LocalizationServlet extends HttpServlet {
@@ -34,17 +34,7 @@ public class LocalizationServlet extends HttpServlet {
                     new Locale("ru"));
         }
 
-        buildJson(myResources, out);
-    }
-
-    private void buildJson(ResourceBundle myResources, PrintWriter out) {
-        Set<String> keys = myResources.keySet();
-        JsonObjectBuilder object = Json.createObjectBuilder();
-
-        for (String key : keys)
-            object.add(key.replace("local.", ""), myResources.getString(key));
-
-        JsonObject data = object.build();
+        JsonObject data = JsonHelper.getLocalData(myResources);
         Json.createWriter(out).writeObject(data);
     }
 }
