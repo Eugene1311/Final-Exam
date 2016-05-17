@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Log4j
-//@WebServlet ("*.jsp")
+//@WebServlet("/*")
 public class MainServlet extends HttpServlet {
 
     @Override

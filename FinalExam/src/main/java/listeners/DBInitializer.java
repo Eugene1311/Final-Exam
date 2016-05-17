@@ -1,26 +1,32 @@
 package listeners;
 
+import dao.mysql.MySqlRoleDao;
+import dao.mysql.MySqlUserDao;
+import lombok.extern.log4j.Log4j;
+
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.SQLException;
 
 @WebListener
+@Log4j
 public class DBInitializer implements ServletContextListener {
     @Resource(name="jdbc/ProdDB")
     private static DataSource ds;
 
+    public static final String USER_DAO = "userDao";
+    public static final String ROLE_DAO = "roleDao";
+
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-//        final ServletContext servletContext = sce.getServletContext();
-        try {
-            Connection connection = ds.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+        final ServletContext servletContext = sce.getServletContext();
+
+        servletContext.setAttribute(USER_DAO, (MySqlUserDao) ds::getConnection);
+        servletContext.setAttribute(ROLE_DAO, (MySqlRoleDao) ds::getConnection);
     }
 
     @Override

@@ -20,6 +20,7 @@
           <element id="library" level="project" name="Gradle: org.glassfish:javax.json:1.0.4" />
           <element id="library" level="project" name="Gradle: org.webjars:webpack:1.5.3" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-catalina:9.0.0.M4" />
+          <element id="library" level="project" name="Gradle: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.5.0" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-servlet-api:9.0.0.M4" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-jsp-api:9.0.0.M4" />
@@ -32,7 +33,6 @@
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-util-scan:9.0.0.M4" />
           <element id="library" level="project" name="Gradle: javax.activation:activation:1.1" />
           <element id="library" level="project" name="Gradle: org.apache.tomcat:tomcat-el-api:9.0.0.M4" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar" />
         </element>
       </element>
       <element id="directory" name="META-INF">

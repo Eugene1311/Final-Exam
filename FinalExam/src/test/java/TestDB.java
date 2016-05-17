@@ -1,7 +1,5 @@
 import org.junit.Test;
 
-import javax.annotation.Resource;
-import javax.sql.DataSource;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,8 +12,6 @@ public class TestDB {
     private String url = "jdbc:mysql://localhost:3306/projects_manager?" +
             "useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&" +
             "useSSL=true&user=root&password=root";
-    @Resource(name="jdbc/ProdDB")
-    private static DataSource ds;
 
     @Test
     public void testDriver() throws SQLException {
@@ -43,17 +39,22 @@ public class TestDB {
     }
 
     @Test
-    public void testDataSource () {
-        System.out.println(ds);
-//        try(Connection connection = ds.getConnection();
-//            Statement statement = connection.createStatement();
-//            ResultSet rs = statement.executeQuery("select now()")) {
-//            System.out.println(connection.getClass().getCanonicalName());
-//            while(rs.next()) {
-//                System.out.println(rs.getString(1));
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+    public void testGetUserByLogin() throws SQLException {
+        String login = "cdf";
+        String query = "SELECT u.id, u.first_name, u.last_name, u.password, r.role, r.id AS role_id"
+                + " FROM Users u, Roles r WHERE login = '" + login +"' AND r.id = u.role_id";
+        try(Connection connection = DriverManager.getConnection(url);
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(query)) {
+            System.out.println(connection.getClass().getCanonicalName());
+            while(rs.next()) {
+                System.out.println(rs.getInt("id") + " " + rs.getString("first_name") + " " +
+                        rs.getString("last_name") + " " +
+                        rs.getString("password") + " " +
+                        rs.getString("role_id") + " " +
+                        rs.getString("role")
+                );
+            }
+        }
     }
 }

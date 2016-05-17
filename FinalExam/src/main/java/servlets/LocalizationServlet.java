@@ -1,6 +1,6 @@
 package servlets;
 
-import functions.JsonHelper;
+import common.functions.JsonHelper;
 
 import javax.json.Json;
 import javax.json.JsonObject;
