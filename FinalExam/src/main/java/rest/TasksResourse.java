@@ -40,7 +40,7 @@ public class TasksResourse {
         if (login == null) {
             return Response.ok().entity("fail").build();
         }
-
+        // TODO: 19.05.2016 разобраться с Respons'om
         try {
             jsonReader = Json.createReader(req.getInputStream());
             JsonObject json = jsonReader.readObject();
@@ -49,15 +49,15 @@ public class TasksResourse {
 
             boolean result = taskDao.setNewTask(title, description, login);
             if (result) {
-
+                return Response.ok("success").build();
             } else {
-
+                return Response.ok("error").build();
             }
         } catch (IOException e) {
             log.error(e);
             e.printStackTrace();
+            return Response.ok().entity("fail").build();
         }
-        return Response.ok().entity("success").build();
     }
 
 //    @POST
