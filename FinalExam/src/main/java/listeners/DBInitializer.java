@@ -1,6 +1,7 @@
 package listeners;
 
 import dao.mysql.MySqlRoleDao;
+import dao.mysql.MySqlTaskDao;
 import dao.mysql.MySqlUserDao;
 import lombok.extern.log4j.Log4j;
 
@@ -19,6 +20,7 @@ public class DBInitializer implements ServletContextListener {
 
     public static final String USER_DAO = "userDao";
     public static final String ROLE_DAO = "roleDao";
+    public static final String TASK_DAO = "taskDao";
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
@@ -27,6 +29,7 @@ public class DBInitializer implements ServletContextListener {
 
         servletContext.setAttribute(USER_DAO, (MySqlUserDao) ds::getConnection);
         servletContext.setAttribute(ROLE_DAO, (MySqlRoleDao) ds::getConnection);
+        servletContext.setAttribute(TASK_DAO, (MySqlTaskDao) ds::getConnection);
     }
 
     @Override

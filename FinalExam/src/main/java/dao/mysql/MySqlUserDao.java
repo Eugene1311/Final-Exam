@@ -26,7 +26,7 @@ public interface MySqlUserDao extends UserDao {
     @Override
     default boolean checkIsUserExists(String login) {
         try {
-            return executeQuery("SELECT COUNT(*) FROM users WHERE login = '" + login + "'",
+            return executeQuery("SELECT COUNT(id) FROM users WHERE login = '" + login + "'",
                     rs -> {
                         rs.next();
                         return rs.getInt(1) == 0;
@@ -40,7 +40,7 @@ public interface MySqlUserDao extends UserDao {
 
     @Override
     default Optional<User> getUserByLogin(String login) {
-        return executeQuery("SELECT u.id, u.first_name, u.last_name, r.role, r.id AS role_id " +
+        return executeQuery("SELECT u.id, u.first_name, u.last_name, u.password, r.role, r.id AS role_id " +
                         "FROM users u, roles r WHERE login = '" + login + "' AND r.id = u.role_id",
                 rs -> rs.next() ?
                         new User(rs.getInt("id"),

@@ -49,6 +49,7 @@ public class InitUserServlet extends HttpServlet {
             } else {
                 User user = userOptional.get();
                 data = Json.createObjectBuilder()
+                        .add("success", true)
                         .add("login", user.getLogin())
                         .add("first_name", user.getFirst_name())
                         .add("last_name", user.getLast_name())

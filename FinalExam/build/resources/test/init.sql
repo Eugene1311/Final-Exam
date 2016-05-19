@@ -14,3 +14,17 @@ CREATE TABLE IF NOT EXISTS users (
 
 # INSERT INTO roles (role) VALUE ('developer');
 # INSERT INTO roles (role) VALUES ('manger'), ('customer');
+
+CREATE TABLE IF NOT EXISTS tasks (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  customer_id INT NOT NULL ,
+  title VARCHAR(255) NOT NULL,
+  description VARCHAR(1000),
+  checked TINYINT NOT NULL ,
+  FOREIGN KEY (customer_id) REFERENCES users(id)
+);
+
+ALTER TABLE tasks MODIFY checked TINYINT(1);
+
+ALTER TABLE tasks ADD created_at TIMESTAMP DEFAULT now(),
+  ADD edited_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ;
