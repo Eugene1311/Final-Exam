@@ -49,12 +49,12 @@ function init() {
         e.preventDefault();
 
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/login', true);
-        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr.open('GET', '/api/tasks', true);
+        // xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         xhr.send(
-            JSON.stringify({
-                test: "test"
-            })
+            // JSON.stringify({
+            //     test: "test"
+            // })
         );
         xhr.onreadystatechange = function() {
             if (this.readyState != 4) return;

@@ -6,7 +6,10 @@ import model.Role;
 import model.User;
 
 import java.sql.SQLException;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Optional;
+import java.util.TreeSet;
 
 @FunctionalInterface
 public interface MySqlUserDao extends UserDao {
@@ -53,6 +56,21 @@ public interface MySqlUserDao extends UserDao {
                                     rs.getString("role")
                                 )
                 ) : null).toOptional();
+    }
+
+    @Override
+    default Collection<User> getAllUsersByRole(int roleId) {
+        return executeQuery("SELECT id, first_name, last_name FROM users WHERE role_id = '" + roleId + "'",
+                rs -> {
+                    Collection<User> users = new TreeSet<>();
+                    while (rs.next()) {
+                        users.add(new User(rs.getInt("id"),
+                                rs.getString("first_name"),
+                                rs.getString("last_name"))
+                        );
+                    }
+                    return users;
+                }).toOptional().orElse(Collections.emptySet());
     }
 
 //    default Optional<User> getUserById(int id) {
