@@ -1,0 +1,334 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ng="http://angularjs.org" lang="ru"> 
+<head>
+<link rel="stylesheet" type="text/css" href="/css/dist/style.css?v=41" />
+<link rel="stylesheet" type="text/css" href="/css/contentsinfo.css?v=41" />
+<script type="text/javascript" src="/assets/903baa3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="/js/comprehensive.js"></script>
+<script type="text/javascript" src="/js/shim/es5-shim.min.js"></script>
+<script type="text/javascript" src="/js/json3.min.js"></script>
+<script type="text/javascript" src="/js/angular14/angular.min.js"></script>
+<script type="text/javascript" src="/js/angular14/angular-cookies.min.js"></script>
+<script type="text/javascript" src="/js/angular14/angular-route.min.js"></script>
+<script type="text/javascript" src="/js/angular14/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="/js/angular14/angular-animate.min.js"></script>
+<script type="text/javascript" src="/js/angular14/ng-scrollable.min.js"></script>
+<script type="text/javascript" src="/js/angular14/ui-bootstrap-tpls-0.13.4.min.js"></script>
+<script type="text/javascript" src="/js/slidermmtop.js?3"></script>
+<script type="text/javascript" src="/js/api.js?v=5"></script>
+<title>Сумма Телеком в Республике Дагестан</title>
+<!--[if lte IE 8]>
+<style>
+.ng-hide {
+    display: none !important;
+}
+</style>
+<script type="text/javascript">
+    document.createElement('ng-view');
+</script>
+
+<![endif]-->
+
+<meta name="viewport" content="width=device-width" />
+
+<meta name='yandex-verification' content='459b9b8a52fc3e90' />
+<meta name='yandex-verification' content='7b9e0db5e7031d2b' />
+<meta name='yandex-verification' content='7ac881c2f736138d' />
+<meta name='yandex-verification' content='789c2a95dd3940cb' />
+<meta name='yandex-verification' content='67f39c04b15e9934' />
+<meta name='yandex-verification' content='5f1297df45b5d363' />
+<meta name='yandex-verification' content='5d40a6c9f36dd3f7' />
+<meta name='yandex-verification' content='695efe1eb7fbc635' />
+<meta name='yandex-verification' content='601834f344c2a647' />
+<meta name='yandex-verification' content='68925206612421bf' />
+<meta name='yandex-verification' content='63a82a4ce097e947' />
+
+<meta name="mailru-verification" content="5c4e457c343ecba7" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="skype_toolbar" content="skype_toolbar_parser_compatible" />
+
+<meta name="keywords" content="подключить быстрый высокоскоростной безлимитный домашний интернет Республика Дагестан дешево, выгодный интернет провайдер тарифы стоимость, цифровое ТВ TV телевидение офис частный дом" /><meta name="description" content="«Сумма Телеком» — федеральный оператор связи, реализующий телекоммуникационные проекты различного уровня. Строительство городских сетей по технологии FTTB и GPON. Подключение к сети интернет в Республике Дагестан." />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="alternate" type="application/rss+xml" title="Новости" href="/rss/9/news"/>
+<link rel="alternate" type="application/rss+xml" title="Пресс-кит" href="/rss/9/press"/>
+<link title="Сумма Телеком Республика Дагестан" rel="search" type="application/opensearchdescription+xml" href="http://dag.sumtel.ru/site/xmlsearch" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="image_src" href="/img/logo.png" /><!--[if lte IE 9]>
+<script type="text/javascript" src="/js/jquery.placeholder.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="/js/ie7/IE9.js"></script>
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+</head>
+<body>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter1178745 = new Ya.Metrika({id:1178745,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,params:window.yaParams||{ }});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/1178745" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="text/javascript">
+<!--
+function search_do (){document.searchform.submit();}
+-->
+</script>
+<div id="wrap" class="wrap region_9">
+	<div id="header" class="header">
+		<div class="row">
+					    <div class="top-switch">
+				<div class="btn btn-primary active">Частным клиентам</div>
+				<a href="/corp" class="btn btn-primary">Корпоративным клиентам</a>
+		    </div>
+			
+		    <div class="top-select">
+		    
+<a href="#" onclick="return false;">Выбрать регион: <span>Республика Дагестан</span></a>
+<div class="spoiler">
+    <div class="col">
+	<a href="/site/goto?region=6">Воронеж</a><a href="/site/goto?region=8">Краснодар</a><a href="/site/goto?region=5">Липецк</a><a href="/site/goto?region=10">Москва</a><a href="/site/goto?region=2">Нижний Новгород</a><a href="/site/goto?region=4">Орел</a>    </div>
+    <div class="col">
+	<a href="/site/goto?region=9">Республика Дагестан</a><a href="/site/goto?region=7">Ростов-на-Дону</a><a href="/site/goto?region=1">Санкт-Петербург</a><a href="/site/goto?region=11">Тверь</a><a href="/site/goto?region=3">Тула</a>    </div>
+</div>
+<script type="text/javascript">
+    $(document).on('mouseenter mouseleave','.header .top-select .spoiler',function(e){
+	if(e.type == 'mouseenter'){
+	    $(this).addClass('focus');
+	}else{
+	    $(this).removeClass('focus');
+	}
+    });
+</script>
+
+		    </div>
+		</div>
+				<div class="row clearfix breadcrumbs">
+		    		</div>
+				<hr noshade />
+		<div class="row clearfix" id="topmenu_nav">
+		    <div class="region">
+			<!-- header_region_info -->
+						<span class="toptel">+7 8722 98 02 02</span>
+						<!-- header_region_info end -->
+		    </div>
+		    <a href="/" class="logo_v2"></a>
+	    <div class="topmenu_nav" id="yw0">
+<div><a href="/internet/tariffs">Интернет</a></div>
+<div class="even"><a href="/tv/#/mobile">ТВ пакеты</a></div>
+<div><a href="/internet/itv"> Интернет + ТВ</a></div>
+</div>		</div>
+		<script type="text/javascript">
+		angular.element(document).ready(function() {
+		    angular.bootstrap(angular.element('#banner-top'), ['mmapp']);
+		});
+</script>
+				<div id="banner-top" class="banner-top notempty">
+		    <div ng-controller="InfoBlockController" class="mm ng-hide" ng-mouseenter="sc.hover = true" ng-mouseleave="sc.hover = false" ng-hide="!sc.li.length">
+			<div class="mm_cont">
+			    <div class="ng-hide" id="mb_239"  mb="239" ng-hide="!bn[239].show"><iframe id="mb_239_html" name="mb_239" seamless="seamless" scrolling="no" frameborder="no" src="/img/infoblock/d136c54df7336eca6d75d9269e23652a/#%2Finternet%2Ftariffs" class="mm_1076_247" width="1076" height="247">&nbsp;</iframe></div><div class="ng-hide" id="mb_235"  mb="235" ng-hide="!bn[235].show"><iframe id="mb_235_html" name="mb_235" seamless="seamless" scrolling="no" frameborder="no" src="/img/infoblock/f81a16865aabbbab66518bb2a33c67c3/#%2Fsupport%2Finstruction%2Fpayment_systems%2Fauto_pay" class="mm_1076_247" width="1076" height="247">&nbsp;</iframe></div><div class="ng-hide" id="mb_245"  mb="245" ng-hide="!bn[245].show"><iframe id="mb_245_html" name="mb_245" seamless="seamless" scrolling="no" frameborder="no" src="/img/infoblock/95b34f6072759857c69d161e60995f45/#http%3A%2F%2Fpodpiska.sumtel.ru%2F" class="mm_1076_247" width="1076" height="247">&nbsp;</iframe></div><div class="ng-hide" id="mb_224"  mb="224" ng-hide="!bn[224].show"><iframe id="mb_224_html" name="mb_224" seamless="seamless" scrolling="no" frameborder="no" src="/img/infoblock/384c6afd85e56214d451ad3915d8970b/#%2Finternet%2Fevents%2F266" class="mm_1076_247" width="1076" height="247">&nbsp;</iframe></div><div class="ng-hide" id="mb_254"  mb="254" ng-hide="!bn[254].show"><iframe id="mb_254_html" name="mb_254" seamless="seamless" scrolling="no" frameborder="no" src="/img/infoblock/4f921484a69afd41299a99d7dfb829df/#http%3A%2F%2Fsmotreshka.sumtel.ru%2F" class="mm_1076_247" width="1076" height="247">&nbsp;</iframe></div><div class="ng-hide" id="mb_233"  mb="233" ng-hide="!bn[233].show"><iframe id="mb_233_html" name="mb_233" seamless="seamless" scrolling="no" frameborder="no" src="/img/infoblock/fb131f8dbb9b4eb23a666d318318ba12/#%2Ftv%2F%23%2Fmobile" class="mm_1076_247" width="1076" height="247">&nbsp;</iframe></div>			</div>
+			<span class="left_arrow" ng-click="sc.prev(true)" ng-class="{touched: sc.btn_touch}">
+			    &nbsp;
+			</span>
+			<span class="right_arrow" ng-click="sc.next(true)" ng-class="{touched: sc.btn_touch}">
+				&nbsp;
+			</span>
+			<div class="navbar">
+				<span ng-repeat="rowid in sc.li" ng-class="{selected: bn[rowid].show}" mbnav="{{rowid}}" ng-mouseover="sc.select(rowid)">
+				</span>
+			</div>
+		    </div>
+		</div>
+			</div><!-- header -->
+<div id="content" class="content">
+	<div class="leftbar">
+		<div class="lefttop-menu" id="yw1">
+<div class="le1"><a href="/checkhouse"><span class="icon"></span><span class="button">Подключиться</span></a></div>
+<div class="le2"><a href="/pay"><span class="icon"></span><span class="button">Оплатить</span></a></div>
+<div class="le3"><a href="/check/move"><span class="icon"></span><span class="button">Переезд</span></a></div>
+<div class="le4"><a href="/internet/menu"><span class="icon"></span><span class="button">Абонентам</span></a></div>
+</div>				<div class="kabinet">
+			<div class="title">Личный кабинет</div>
+			<div class="login">
+				<a href="http://my.sumtel.ru/" target="_blank"><b>Войти</b></a>
+			</div>
+		</div>
+		<hr/>
+				<div class="balance">
+		<div class="label">Ваш договор:</div><a href="http://my.sumtel.ru" target="_blank"><div class="balance_id data"></div></a><br>
+		<div class="label">Ваш баланс:</div><div class="balance_num data"></div><br style="clear: both;">
+		<div class="label">Вам хватит на:</div><div class="data"><span class="day_left"></span>&nbsp;<span class="day_left_d"></span></div>
+		<br><br>
+		<hr/>
+		</div>
+		<script type="text/javascript">
+		api_balance_get().then(function(data){
+			var a = $('.balance'), c = data.day_left, c2 = Number(String(c).substr(-2)), d = Number(String(c).substr(-1)),e = 1, l = ['день','дней','дня'];
+			
+			$('.balance_id',a).text(data.dogovor);
+			$('.balance_num',a).text(data.balance+' руб.');
+			
+			if(d === 1 && (c2 < 10 || c2 > 20)){
+				e = 0;
+			}else if(d > 1 && 5 > d && (c2 < 10 || c2 > 20)){
+				e = 2;
+			}else{
+				e = 1;
+			}
+			
+			if(data.status === 2){
+			    $('.day_left',a).parent().hide().prev()
+				.text('Заблокирован Недостаточно средств')
+				.css('font-size','0.8em');
+			}else{
+			    	$('.day_left_d',a).text(l[e]);
+				$('.day_left',a).text(data.day_left);
+			}
+			
+			a.show();
+			
+			$(function() {
+				$('.autocomplite_dogovor').val(data.dogovor);
+				$('.autocomplite_req_balance').val(data.req_balance);
+			});
+		});
+		</script>
+				<div class="search">
+		<form name="searchform" action="/search" method="post">		    <input name="searchword" autocomplete="false" placeholder="поиск..." maxlength="40">
+		<a href="javascript:search_do();">Найти </a>
+		</form><!--[if lte IE 9]>
+<script type="text/javascript">
+$(function(){
+    $('.search input').placeholder();
+});
+</script>
+<![endif]-->
+		</div>
+				<div class="social">Мы в социальных сетях</div>
+		<a href="http://vk.com/sumtel" title="VK" target="_blank"><img src="/img/vkcom.png" alt="VK"></a> <a href="http://facebook.com/SummaTelecom" title="Facebook" target="_blank"><img src="/img/fb.png" alt="Facebook"></a> <a href="http://twitter.com/summa_telecom" title="Twitter" target="_blank"><img src="/img/tw.png" alt="Twitter"></a> <a href="http://youtube.com/user/SummaTelecomMain" title="Youtube" target="_blank"><img src="/img/youtube.png" alt="Youtube"></a> <a href="http://instagram.com/sumtel" title="Instagram" target="_blank"><img src="/img/instagram.png" alt="Instagram"></a>
+				<div class="linklist">
+		    <a href="/site_map">карта сайта</a><a href="/feedback/index">обратная связь</a>		</div>
+	</div>
+		<div class="rightbar">
+				<div class="banner-right">
+			&nbsp;
+					</div>
+			</div>
+			<div id="midlebar" class="midlebar">
+		<div id="contents_info" class="contents_info">
+			<script src="/static/templates/default/js/form_validator.js" type="text/javascript"></script>
+<div class="infoblock">Уважаемый абонент!<p style="color:red;font-weight: bold;">На Вашем счету закончились 
+деньги.</p>
+Оплатить банковской картой или Яндекс.деньгами можно <a href="/pay">прямо с сайта</a><br/>
+Воспользоваться услугой Обещанный платёж можно в <a href="http://my.sumtel.ru">Личном кабинете</a><br/>
+Узнать о других способах пополнения счёта можно <a href="/clients/payment/">здесь.</a>
+</div>
+<h4 class="light">Оплата банковскими картами</h4>
+<form name="pskbCardForm" method="post" id="pskbCardForm" action="https://pay.pscb.ru">
+<input type="hidden" name="service" value="8">
+<table border="0" cellpadding="0" cellspacing="0" width="585">
+<tbody>
+<tr>
+<td align="left" class="font-color-green font-bold">Ваш номер договора:</td>
+<td width="265" align="left"><input size="16" type="text" name="account" placeholder="11 цифр" class="font-color-grey autocomplite_dogovor"/></td>
+<td rowspan="4" align="right" width="155"><img border="0" src="/img/platsys/visa_master.png" width="120"></td>
+</tr>
+<tr>
+<td colspan="2" height="15"></td>
+</tr>
+<tr>
+<td align="left" class="font-color-green font-bold">Сумма к оплате:</td>
+<td align="left"><input size="16" class="font-color-grey" type="text" name="amount" placeholder="500"> руб.</td>
+</tr>
+<tr>
+<td colspan="2" height="15"></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><button class="orange">Оплатить!</button></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</form>
+<script  type="text/javascript">
+ var frmvalidator = new Validator("pskbCardForm");
+ frmvalidator.addValidation("account","req", "Заполните номер договора.");
+ frmvalidator.addValidation("account","numeric", "Номер договора должен состоять только из цифр.");
+ frmvalidator.addValidation("account","maxlen=11", "Номер договора ровно 11 цифр.");
+ frmvalidator.addValidation("account","minlen=11", "Номер договора ровно 11 цифр.");
+ frmvalidator.addValidation("amount","req", "Заполните сумму к оплате.");
+ frmvalidator.addValidation("amount","numeric", "Сумма оплаты вводится только цифрами.");
+ frmvalidator.addValidation("amount","maxlen=6", "Большая сумма, укажите меньшее значение.");
+</script>		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="footer-left">
+	    <div class="p16">
+		<img src="/img/16+.svg" alt="16+"/>
+		<!-- Loading time: 0.017295837402344 -->
+	    </div>
+	    <div class="footermenu" id="yw2">
+<div><a href="/job_order">Работа</a></div>
+<div><a href="/contacts">Контакты</a></div>
+<div><a target="_blank" href="http://forum.sumtel.ru/">Форум</a></div>
+</div>	</div>
+    <!--
+	<div class="left_botoom_menu">
+			</div>	
+	
+	-->
+</div>
+
+</div><!-- wrap end -->
+
+<script type="text/javascript">
+var LHCChatOptions = {};
+LHCChatOptions.opt = {widget_height:340,widget_width:300,popup_height:520,popup_width:500};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+var refferer = (document.referrer) ? encodeURIComponent(document.referrer) : '';
+var location  = (document.location) ? encodeURIComponent(document.location) : '';
+po.src = '//livechat.sumtel.ru/chat/getstatus/(click)/internal/(position)/bottom_right/(check_operator_messages)/true/(top)/350/(units)/pixels/(leaveamessage)/true/(department)/1?r='+refferer+'&l='+location;
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+var LHCFAQOptions = {status_text:'Вопросы и ответы',url:'replace_me_with_dynamic_url',identifier:''};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = '//livechat.sumtel.ru/faq/getstatus/(position)/middle_right/(top)/50/(units)/percents/(theme)/1';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+</body>
+</html>

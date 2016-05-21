@@ -19,14 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="1_main" target="1.5" />
-      <module name="1_test" target="1.5" />
       <module name="FinalExam_main" target="1.8" />
       <module name="FinalExam_test" target="1.8" />
-      <module name="GradleDemo_main" target="1.8" />
-      <module name="GradleDemo_test" target="1.8" />
-      <module name="jsp_main" target="1.8" />
-      <module name="jsp_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

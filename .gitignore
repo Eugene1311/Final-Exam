@@ -1,1 +1,6 @@
+./FinalExam/src/main/webapp/node_modules/*
 .idea
+./FinalExam/.gradle
+./FinalExam/build
+./FinalExam/out
+./FinalExam/.idea
