@@ -4,8 +4,10 @@ import dao.interfaces.TaskDao;
 import model.Account;
 import model.Task;
 
+import java.sql.ResultSet;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Optional;
 import java.util.TreeSet;
 
 @FunctionalInterface
@@ -34,7 +36,7 @@ public interface MySqlTaskDao extends TaskDao {
                     while (rs.next()) {
                         checked = rs.getInt("checked") != 0;
                         tasks.add(new Task(rs.getInt("id"),
-                                rs.getString("customer_id"),
+                                rs.getInt("customer_id"),
                                 rs.getString("title"),
                                 rs.getString("description"),
                                 checked,
@@ -59,7 +61,7 @@ public interface MySqlTaskDao extends TaskDao {
                     while (rs.next()) {
                         checked = rs.getInt("checked") != 0;
                         tasks.add(new Task(rs.getInt("id"),
-                                rs.getString("customer_id"),
+                                rs.getInt("customer_id"),
                                 rs.getString("title"),
                                 rs.getString("description"),
                                 checked,
@@ -69,5 +71,29 @@ public interface MySqlTaskDao extends TaskDao {
                     }
                     return tasks;
                 }).toOptional().orElse(Collections.emptySet());
+    }
+
+    @Override
+    default Optional<Task> getTaskById(int id) {
+        return withPreparedStatement(
+                "SELECT * FROM tasks WHERE id = ?",
+                preparedStatement -> {
+                    preparedStatement.setInt(1, id);
+                    ResultSet rs = preparedStatement.executeQuery();
+                    boolean checked = false;
+                    if (rs.next()) {
+                        checked = rs.getInt("checked") != 0;
+                        return new Task(rs.getInt("id"),
+                                rs.getInt("customer_id"),
+                                rs.getString("title"),
+                                rs.getString("description"),
+                                checked,
+                                rs.getDate("created_at").toLocalDate(),
+                                rs.getDate("edited_at"),
+                                new Account(rs.getInt("account_id")));
+                    } else {
+                        return null;
+                    }
+                }).toOptional();
     }
 }

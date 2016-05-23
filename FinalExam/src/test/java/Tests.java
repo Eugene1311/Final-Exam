@@ -1,3 +1,4 @@
+import common.functions.EncryptPassword;
 import org.junit.Test;
 
 import javax.json.Json;
@@ -49,6 +50,13 @@ public class Tests {
 
         JsonObject data = object.build();
         System.out.println(data);
+    }
+
+    @Test
+    public void testEncryptPassword() {
+        String psw_1 = EncryptPassword.encryptPassword("qq");
+        String psw_2 = EncryptPassword.encryptPassword("qq");
+        System.out.println(psw_1 + " " + psw_2);
     }
 }
 

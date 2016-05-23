@@ -35,5 +35,8 @@ CREATE TABLE IF NOT EXISTS accounts (
   accepted TINYINT(1) DEFAULT 0
 );
 
-ALTER TABLE tasks ADD account_id INT DEFAULT NULL ,
-  ADD FOREIGN KEY (account_id) REFERENCES accounts(id);
+# ALTER TABLE tasks ADD account_id INT DEFAULT NULL ,
+#   ADD FOREIGN KEY (account_id) REFERENCES accounts(id);
+
+# ALTER TABLE accounts MODIFY value INT NOT NULL ,
+#   ADD COLUMN isPayed TINYINT(1) DEFAULT 0;

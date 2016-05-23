@@ -1,3 +1,4 @@
+import model.Account;
 import model.Task;
 import model.User;
 import org.junit.Before;
@@ -80,24 +81,45 @@ public class TestDB {
 
     @Test
     public void testGetAllTasks() throws SQLException {
-        String query = "SELECT id, customer_id, title, description, checked, created_at, edited_at " +
+        String query = "SELECT id, customer_id, title, description, checked, created_at, edited_at, account_id " +
                 "FROM tasks";
         execute(query);
     }
 
     @Test
     public void testGetAllTasksByLogin() throws SQLException {
-        String query = "SELECT id, customer_id, title, description, checked, created_at, edited_at " +
+        String query = "SELECT id, customer_id, title, description, checked, created_at, edited_at, account_id " +
                 "FROM tasks WHERE customer_id = " +
                 "(SELECT id FROM users WHERE login = 'customer')";
         execute(query);
     }
 
+    private void execute(String query) throws SQLException {
+        Collection<Task> tasks = new TreeSet<>();
+        try(Statement statement = connection.createStatement()) {
+            ResultSet rs = statement.executeQuery(query);
+            while(rs.next()) {
+                boolean checked = rs.getInt("checked") != 0;
+                Task task = new Task(rs.getInt("id"),
+                        rs.getInt("customer_id"),
+                        rs.getString("title"),
+                        rs.getString("description"),
+                        checked,
+                        rs.getDate("created_at").toLocalDate(),
+                        rs.getDate("edited_at"),
+                        new Account(rs.getInt("account_id")));
+                tasks.add(task);
+            }
+        }
+        tasks.forEach(System.out::println);
+        System.out.println(tasks.size());
+    }
+
     @Test
     public void testGetAllUsersByRole() throws SQLException {
         String query = "SELECT id, first_name, last_name FROM users WHERE role_id = 1";
-        try(Statement statement = connection.createStatement()) {
-            ResultSet rs = statement.executeQuery(query);
+        try(Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(query)) {
             Collection<User> users = new TreeSet<>();
             while (rs.next()) {
                 users.add(new User(rs.getInt("id"),
@@ -111,23 +133,22 @@ public class TestDB {
         }
     }
 
-    private void execute(String query) throws SQLException {
-        Collection<Task> tasks = new TreeSet<>();
-        try(Statement statement = connection.createStatement()) {
-            ResultSet rs = statement.executeQuery(query);
-            while(rs.next()) {
-                boolean checked = rs.getInt("checked") != 0;
-                Task task = new Task(rs.getInt("id"),
-                        rs.getString("customer_id"),
-                        rs.getString("title"),
-                        rs.getString("description"),
-                        checked,
-                        rs.getDate("created_at").toLocalDate(),
-                        rs.getDate("edited_at"));
-                tasks.add(task);
+    @Test
+    public void testGetTaskById() throws SQLException {
+        String query = "SELECT * FROM tasks WHERE id = ?";
+        try(PreparedStatement ps = connection.prepareStatement(query);) {
+            ps.setInt(1, 1);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                System.out.println(rs.getInt("id") + " " +
+                        rs.getInt("customer_id") + " " +
+                        rs.getString("title") + " " +
+                        rs.getString("description") + " " +
+                        rs.getInt("checked") + " " +
+                        rs.getDate("created_at") + " " +
+                        rs.getDate("edited_at") + " " +
+                        rs.getInt("account_id"));
             }
         }
-        tasks.forEach(System.out::println);
-        System.out.println(tasks.size());
     }
 }

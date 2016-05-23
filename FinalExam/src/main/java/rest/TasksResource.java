@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 import static javax.ws.rs.core.Response.ok;
 
@@ -27,6 +28,9 @@ import static javax.ws.rs.core.Response.ok;
 @Log4j
 public class TasksResource {
     private TaskDao taskDao;
+    private final ObjectMapper mapper = new ObjectMapper();
+    private final Map<String,Object> response = new HashMap<>();
+    private String jsonResponse;
 
     @Context
     public void setContext(ServletContext context) {
@@ -70,6 +74,27 @@ public class TasksResource {
             final Collection<Task> tasks = taskDao.getAllTasksByLogin(login);
             response.put("success", Boolean.TRUE);
             response.put("result", tasks);
+            jsonResponse = mapper.writeValueAsString(response);
+        } catch (JsonProcessingException e) {
+            log.error(e);
+            e.printStackTrace();
+        }
+        return ok().entity(jsonResponse).build();
+    }
+
+    @GET
+    @Path("{id}")
+    @Produces({"application/json"})
+    public Response getTaskById(@PathParam("id")int id) {
+        Optional<Task> task = taskDao.getTaskById(id);
+
+        if (task.isPresent()) {
+            response.put("success", Boolean.TRUE);
+            response.put("result", task.get());
+        } else {
+            response.put("success", Boolean.FALSE);
+        }
+        try {
             jsonResponse = mapper.writeValueAsString(response);
         } catch (JsonProcessingException e) {
             log.error(e);

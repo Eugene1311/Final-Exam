@@ -1,6 +1,7 @@
 package dao.mysql;
 
 import common.functions.EncryptPassword;
+import common.functions.Exceptional;
 import dao.interfaces.UserDao;
 import model.Role;
 import model.User;
@@ -27,7 +28,20 @@ public interface MySqlUserDao extends UserDao {
     }
 
     @Override
-    default boolean checkIsUserExists(String login) {
+    default Optional<String> checkIsUserExists(String login, String first_name, String last_name, String password) {
+        String psw = EncryptPassword.encryptPassword(password);
+        return executeQuery("SELECT role FROM roles r, users u " +
+                            "WHERE (r.id = u.role_id) AND (u.login = '" + login + "') " +
+                            "AND (u.first_name = '" + first_name + "') AND (u.last_name = '" + last_name + "') " +
+                            "AND (u.password = '" + psw + "')",
+                    rs -> rs.next()?
+                            rs.getString("role")
+                            : null
+                    ).toOptional();
+    }
+
+    @Override
+    default boolean checkIsLoginExists(String login) {
         try {
             return executeQuery("SELECT COUNT(id) FROM users WHERE login = '" + login + "'",
                     rs -> {
@@ -73,22 +87,12 @@ public interface MySqlUserDao extends UserDao {
                 }).toOptional().orElse(Collections.emptySet());
     }
 
-//    default Optional<User> getUserById(int id) {
-//        return executeQuery(
-//                "SELECT first_name, last_name, password, role_id" +
-//                        " FROM Person WHERE id = " + id,
-//    }
-//
-//    default Optional<String> getPasswordByEmail(String email) {
-//        return executeQuery("SELECT password FROM Person WHERE email = '" + email + "'",
-//                rs -> rs.next() ? rs.getString("password") : null
-//        ).toOptional();
-//    }
-//
-//    default boolean setPasswordByEmail(String email, String password) {
-//        return withStatement(statement ->
-//                1 <= statement.executeUpdate(
-//                        "UPDATE Person SET password = '" + password + "' WHERE email = '" + email + "'")
-//        ).toOptional().orElse(false);
-//    }
+    @Override
+    default boolean changeUserData(String current_login, String new_login, String new_first_name, String new_last_name) {
+        Exceptional<Integer, SQLException> count = executeUpdate("UPDATE users SET login = '" + new_login + "', first_name = '" + new_first_name +
+                "', last_name = '" + new_last_name + "' " +
+                "WHERE login = '" + current_login + "'");
+
+        return count.toOptional().isPresent();
+    }
 }

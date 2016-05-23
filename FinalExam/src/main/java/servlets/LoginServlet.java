@@ -3,6 +3,7 @@ package servlets;
 import dao.interfaces.RoleDao;
 import dao.interfaces.UserDao;
 import listeners.DBInitializer;
+import lombok.extern.log4j.Log4j;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -19,6 +20,7 @@ import java.io.PrintWriter;
 import java.util.Optional;
 
 @WebServlet("/login")
+@Log4j
 public class LoginServlet extends HttpServlet {
 
     @Override
@@ -35,9 +37,9 @@ public class LoginServlet extends HttpServlet {
         int role_id = Integer.parseInt(json.getString("role"));
         String login = json.getString("login");
 
-        boolean isUserExists = userDao.checkIsUserExists(login);
+        boolean isLoginExists = userDao.checkIsLoginExists(login);
 
-        if (!isUserExists) {
+        if (!isLoginExists) {
             JsonObject data = Json.createObjectBuilder()
                     .add("loginReserved", true)
                     .build();
@@ -60,8 +62,70 @@ public class LoginServlet extends HttpServlet {
                     .build();
             Json.createWriter(out).writeObject(data);
 
-            Cookie cookie = new Cookie("login", login);
-            resp.addCookie(cookie);
+            setCookie(resp, login);
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("application/json; charset=utf-8");
+        PrintWriter out = resp.getWriter();
+        ServletContext servletContext = getServletContext();
+        UserDao userDao = (UserDao) servletContext.getAttribute(DBInitializer.USER_DAO);
+
+        String login = req.getParameter("login");
+        String first_name = req.getParameter("firstName");
+        String last_name = req.getParameter("lastName");
+        String password = req.getParameter("password");
+
+        Optional<String> role = userDao.checkIsUserExists(login, first_name, last_name, password);
+
+        JsonObject data;
+
+        if(role.isPresent()) {
+            data = Json.createObjectBuilder()
+                    .add("success", true)
+                    .add("role", role.get())
+                    .build();
+        } else {
+            data = Json.createObjectBuilder()
+                    .add("success", false)
+                    .build();
+        }
+
+        Json.createWriter(out).writeObject(data);
+        setCookie(resp, login);
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("application/json; charset=utf-8");
+        PrintWriter out = resp.getWriter();
+        ServletContext servletContext = getServletContext();
+        UserDao userDao = (UserDao) servletContext.getAttribute(DBInitializer.USER_DAO);
+
+        JsonReader jsonReader = Json.createReader(req.getReader());
+        JsonObject json = jsonReader.readObject();
+
+        String current_login = json.getString("current_login");
+        String new_login = json.getString("new_login");
+        String new_first_name = json.getString("new_first_name");
+        String new_last_name = json.getString("new_last_name");
+
+        boolean isUpdated = userDao.changeUserData(current_login, new_login, new_first_name, new_last_name);
+
+        JsonObject data = Json.createObjectBuilder()
+                .add("success", isUpdated)
+                .build();
+        Json.createWriter(out).writeObject(data);
+
+        if(isUpdated) {
+            setCookie(resp, new_login);
+        }
+    }
+
+    private void setCookie(HttpServletResponse resp, String login) {
+        Cookie cookie = new Cookie("login", login);
+        resp.addCookie(cookie);
     }
 }

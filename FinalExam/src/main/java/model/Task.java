@@ -10,7 +10,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class Task implements Comparable{
     private final int id;
-    private final String customer_id;
+    private final int customer_id;
     private String title;
     private String description;
     private boolean checked;
