@@ -6,11 +6,9 @@ import dao.interfaces.UserDao;
 import model.Role;
 import model.User;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Optional;
-import java.util.TreeSet;
+import java.util.*;
 
 @FunctionalInterface
 public interface MySqlUserDao extends UserDao {
@@ -94,5 +92,35 @@ public interface MySqlUserDao extends UserDao {
                 "WHERE login = '" + current_login + "'");
 
         return count.toOptional().isPresent();
+    }
+
+    @Override
+    default boolean changeUserData(String current_login, String new_login,
+                                   String new_first_name, String new_last_name, String qualification, String specialization) {
+        return executeUpdate("UPDATE users SET login = '" + new_login + "', first_name = '" + new_first_name +
+                "', last_name = '" + new_last_name + "', " +
+                "qualification = '" + qualification + "', " +
+                "specialization = '" + specialization + "' " +
+                "WHERE login = '" + current_login + "'").toOptional().isPresent();
+    }
+
+    @Override
+    default Collection<User> getAllDevelopersByParams(String qualification, String specialization) {
+        return withPreparedStatement("SELECT ALL login, first_name, last_name FROM users " +
+                "WHERE qualification = ? AND specialization = ?",
+                preparedStatement -> {
+                    preparedStatement.setString(1, qualification);
+                    preparedStatement.setString(2, specialization);
+                    ResultSet rs = preparedStatement.executeQuery();
+                    Collection<User> developers = new HashSet<>();
+                    while(rs.next()) {
+                            developers.add(new User(
+                                rs.getString("login"),
+                                rs.getString("first_name"),
+                                rs.getString("last_name")
+                            ));
+                        }
+                    return developers;
+                }).toOptional().orElse(Collections.emptySet());
     }
 }

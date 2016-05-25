@@ -112,7 +112,16 @@ public class LoginServlet extends HttpServlet {
         String new_first_name = json.getString("new_first_name");
         String new_last_name = json.getString("new_last_name");
 
-        boolean isUpdated = userDao.changeUserData(current_login, new_login, new_first_name, new_last_name);
+        boolean isUpdated;
+        try{
+            String qualification = json.getString("qualification");
+            String specialization = json.getString("specialization");
+
+            isUpdated = userDao.changeUserData(current_login, new_login, new_first_name, new_last_name,
+                    qualification, specialization);
+        } catch (NullPointerException e) {
+            isUpdated = userDao.changeUserData(current_login, new_login, new_first_name, new_last_name);
+        }
 
         JsonObject data = Json.createObjectBuilder()
                 .add("success", isUpdated)

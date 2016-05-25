@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j;
 import model.User;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -61,4 +62,31 @@ public class UsersResource {
 
         return ok().entity(jsonResponse).build();
     }
+
+    @GET
+    @Path("find-developers")
+    @Produces({"application/json"})
+    public Response getAllDevelopersByParams(@Context HttpServletRequest req) {
+        ObjectMapper mapper = new ObjectMapper();
+        Map<String,Object> response = new HashMap<>();
+        String jsonResponse = null;
+
+        String qualification = req.getParameter("qualification");
+        String specialization = req.getParameter("specialization");
+
+        Collection<User> developers = userDao.getAllDevelopersByParams(qualification, specialization);
+
+        response.put("success", Boolean.TRUE);
+        response.put("result", developers);
+
+        try {
+            jsonResponse = mapper.writeValueAsString(response);
+        } catch (JsonProcessingException e) {
+            log.error(e);
+            e.printStackTrace();
+        }
+
+        return ok().entity(jsonResponse).build();
+    }
+
 }

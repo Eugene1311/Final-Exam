@@ -19,6 +19,12 @@ public class User implements Comparable {
         this.last_name = last_name;
     }
 
+    public User(String login, String first_name, String last_name) {
+        this.login = login;
+        this.first_name = first_name;
+        this.last_name = last_name;
+    }
+
     @Override
     public int compareTo(Object o) {
         User user = (User) o;

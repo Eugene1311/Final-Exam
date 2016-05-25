@@ -13,4 +13,7 @@ public interface UserDao extends Dao{
     Collection<User> getAllUsersByRole(int roleId);
     Optional<String> checkIsUserExists(String login, String first_name, String last_name, String password);
     boolean changeUserData(String current_login, String new_login, String new_first_name, String new_last_name);
+    boolean changeUserData(String current_login, String new_login, String new_first_name, String new_last_name,
+                           String qualification, String specialization);
+    Collection<User> getAllDevelopersByParams(String qualification, String specialization);
 }
